@@ -1,0 +1,97 @@
+public class RegularPolygon {
+    // Private fields
+    private int n;
+    private double side;
+    private double x;
+    private double y;
+
+    // No-arg constructor
+    public RegularPolygon() {
+        this.n = 3;
+        this.side = 1;
+        this.x = 0;
+        this.y = 0;
+    }
+
+    // Constructor with n and side
+    public RegularPolygon(int n, double side) {
+        this.n = n;
+        this.side = side;
+        this.x = 0;
+        this.y = 0;
+    }
+
+    // Constructor with n, side, x, and y
+    public RegularPolygon(int n, double side, double x, double y) {
+        this.n = n;
+        this.side = side;
+        this.x = x;
+        this.y = y;
+    }
+
+    // Getters and setters
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    // Method to return perimeter
+    public double getPerimeter() {
+        return n * side;
+    }
+
+    // Method to return area
+    public double getArea() {
+        return (n * side * side) / (4 * Math.tan(Math.PI / n));
+    }
+}
+
+
+
+public class TestRegularPolygon {
+    public static void main(String[] args) {
+        // Create objects
+        RegularPolygon poly1 = new RegularPolygon();
+        RegularPolygon poly2 = new RegularPolygon(6, 4);
+        RegularPolygon poly3 = new RegularPolygon(10, 4, 5.6, 7.8);
+
+        // Display perimeter and area for each
+        System.out.println("Polygon 1 - Perimeter: " + poly1.getPerimeter() + ", Area: " + poly1.getArea());
+        System.out.println("Polygon 2 - Perimeter: " + poly2.getPerimeter() + ", Area: " + poly2.getArea());
+        System.out.println("Polygon 3 - Perimeter: " + poly3.getPerimeter() + ", Area: " + poly3.getArea());
+    }
+}
+
+
+
+
+Polygon 1 - Perimeter: 3.0, Area: 0.43301270189221946
+Polygon 2 - Perimeter: 24.0, Area: 41.569219381653056
+Polygon 3 - Perimeter: 40.0, Area: 123.10734148701015
